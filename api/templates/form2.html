@@ -1,19 +1,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Consulta dos Dados do Usuário</title>
+	<title>Consulta de Agendamento de Envio de Comunicação</title>
 </head>
 <body >
-		<h1><a>Consulta dos Dados do Usuário</a></h1>
-		<form id="form_35301" method="post" action="http://localhost:5000/GetUser">
+		<h1><a>Consulta de Agendamento de Envio de Comunicação</a></h1>
+		<form id="form_35301" method="get" action="http://localhost:8080/GetEvent">
 			<h2>Identificação</h2>
 			<p>Informe os dados de identificação para consulta</p>
-		<label>E-mail </label>
-		<input name="email" type="text" maxlength="255" value=""/> 
-		<label>Password </label>
-		<input id="element_2" name="password" class="element text medium" type="text" maxlength="255" value=""/> 
-		<p><small>Informe a senha do usuário/paciente</small></p> 
+			<p>
+				<label>Título/Assunto: </label><br>
+				<input name="title" type="text" maxlength="255" value="" placeholder="Escreva seu assunto"/>
+			</p>
+
+			<p>
+				<label>Data de Envio: </label> <br>
+				<input id="date" type="date">
+			</p>
+
+			<p>
+				<label>Hora de Envio: </label> <br>
+				<input type="time" id="time" name="time">
+			</p>
 				<input type="submit" name="submit" value="Submit" />
-		</form>	
+		</form>
 </body>
 </html>

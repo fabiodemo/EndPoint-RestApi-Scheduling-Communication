@@ -1,35 +1,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Identificação</title>
+	<title>Agendamento de Envio de Comunicação</title>
 </head>
-<body >
-		<h1><a>Agendamento de envio de Comunicação</a></h1>
+<body>
+		<h1><a>Agendamento de Envio de Comunicação</a></h1>
 		<form id="form_35301" method="post" action="http://localhost:8080/CreateEvent">
 
-			<p>Informe os dados de agendamento abaixo</p>
+			<p>Informe os Dados de Agendamento Abaixo</p>
 
 			<p>
-				<label>Título/assunto </label>
-				<input name="title" type="text" maxlength="255" value=""/>
+				<label>Título/Assunto: </label><br>
+				<input name="title" type="text" maxlength="255" value="" placeholder="Escreva seu assunto"/>
 			</p>
 
 			<p>
-				<label>Data de Envio</label>
+				<label>Data de Envio: </label> <br>
 				<input id="date" type="date">
 			</p>
 
 			<p>
-				<label>Hora de Envio</label>
+				<label>Hora de Envio: </label> <br>
 				<input type="time" id="time" name="time">
 			</p>
 
 			<p>
-				<textarea rows="4" cols="50" name="comment" placeholder="Escreva sua descrição..."></textarea>
+				<label>Descrição: </label>
+				<br>
+				<textarea rows="4" cols="50" name="description" id="desc" placeholder="Escreva sua descrição..."></textarea>
 			</p>
 
 			<p>
-				<input type="submit" name="submit" value="Submit" />
+				<label>Meio de Comunicação: </label><br>
+				<select id="comm">
+					<option value="email">Email</option>
+					<option value="sms">SMS</option>
+					<option value="push">Ṕush</option>
+					<option value="whatsapp">WhatsApp</option>
+				</select>
+			</p>
+
+			<p>
+				<input type="submit" name="submit" value="Concluir" />
 			</p>
 
 		</form>
