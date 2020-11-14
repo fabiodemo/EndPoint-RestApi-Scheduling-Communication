@@ -11,17 +11,17 @@
 
 			<p>
 				<label>Título/Assunto: </label><br>
-				<input name="title" type="text" maxlength="255" value="" placeholder="Escreva seu assunto"/>
+				<input name="title" type="text" maxlength="255" value="" placeholder="Escreva seu assunto" required="yes"/>
 			</p>
 
 			<p>
 				<label>Data de Envio: </label> <br>
-				<input id="date" type="date">
+				<input id="date" type="date" required="yes">
 			</p>
 
 			<p>
 				<label>Hora de Envio: </label> <br>
-				<input type="time" id="time" name="time">
+				<input type="time" id="time" name="time" required="yes" value="13:00">
 			</p>
 
 			<p>
@@ -32,6 +32,14 @@
 
 			<p>
 				<label>Meio de Comunicação: </label><br>
+				<input type="checkbox" id="email" name="email" value="email">
+				<label for="email"> Email</label><br>
+				<input type="checkbox" id="sms" name="sms" value="sms">
+				<label for="sms"> SMS</label><br>
+				<input type="checkbox" id="push" name="push" value="push">
+				<label for="push"> Ṕush</label><br>
+				<input type="checkbox" id="whatsapp" name="whatsapp" value="whatsapp">
+				<label for="whatsapp"> WhatsApp</label><br><br>
 				<select id="comm">
 					<option value="email">Email</option>
 					<option value="sms">SMS</option>

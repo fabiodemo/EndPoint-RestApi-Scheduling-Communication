@@ -8,6 +8,12 @@
 		<form id="form_35301" method="get" action="http://localhost:8080/GetEvent">
 			<h2>Identificação</h2>
 			<p>Informe os dados de identificação para consulta</p>
+
+			<p>
+				<label>Identificador: </label><br>
+				<input name="id" type="text" maxlength="255" value="" placeholder="Escreva seu identificador"/>
+			</p>
+
 			<p>
 				<label>Título/Assunto: </label><br>
 				<input name="title" type="text" maxlength="255" value="" placeholder="Escreva seu assunto"/>
@@ -20,7 +26,7 @@
 
 			<p>
 				<label>Hora de Envio: </label> <br>
-				<input type="time" id="time" name="time">
+				<input type="time" id="time" name="time" value="13:00">
 			</p>
 				<input type="submit" name="submit" value="Submit" />
 		</form>
