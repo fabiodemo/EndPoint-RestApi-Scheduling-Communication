@@ -6,12 +6,12 @@ CREATE DATABASE Communication;
 USE Communication;
 
 CREATE TABLE `tblCommunication` (
-`Id` int(11) NOT NULL AUTO_INCREMENT,
-`Title` varchar(45) NOT NULL,
+`Id` int(15) NOT NULL AUTO_INCREMENT,
+`Title` varchar(120) NOT NULL,
 `Date` date NOT NULL,
-`Time` varchar(45) NOT NULL,
+`Time` time NOT NULL,
 `Description` TEXT,
-`Means` varchar(45),
+`Means` varchar(60),
 PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
