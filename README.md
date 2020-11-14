@@ -1,7 +1,10 @@
 O presente projeto visa atender aos requisitos do desafio lógico proposto pelo programa de Trainee Biopark.
 
-```sql
 Para isso é necessário criar o banco de dados MySQL.
+```sql
+CREATE DATABASE Communication;
+USE Communication;
+
 CREATE TABLE `tblCommunication` (
 `Id` int(11) NOT NULL AUTO_INCREMENT,
 `Title` varchar(45) NOT NULL,
