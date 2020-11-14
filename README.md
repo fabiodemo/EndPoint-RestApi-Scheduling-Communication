@@ -1,4 +1,4 @@
-O presente projeto visa atender aos requisitos do desafio lógico proposto pelo programa de Trainee Biopark.
+O presente projeto visa atender aos requisitos do desafio Tech proposto pelo programa de Trainee Biopark.
 
 Para isso é necessário criar o banco de dados MySQL.
 ```sql
