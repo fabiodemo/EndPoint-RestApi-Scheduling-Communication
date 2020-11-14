@@ -6,7 +6,7 @@ CREATE DATABASE Communication;
 USE Communication;
 
 CREATE TABLE `tblCommunication` (
-`Id` int(15) NOT NULL AUTO_INCREMENT,
+`Id` int NOT NULL AUTO_INCREMENT,
 `Title` varchar(120) NOT NULL,
 `Description` text,
 `Date` date NOT NULL,
