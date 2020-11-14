@@ -11,10 +11,23 @@ app.config['MYSQL_DATABASE_PASSWORD'] = 'fd'
 app.config['MYSQL_DATABASE_DB'] = 'Communication'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
+mysql.init_app(app)
+conn = mysql.connect()
+cursor = conn.cursor()
+
 class CreateEvent(Resource):
     def post(self):
         try:
-            print("create")
+            parser = reqparse.RequestParser()
+            parser.add_argument('title', type=str, help='title to create event')
+            parser.add_argument('description', type=str, help='title to create event')
+            parser.add_argument('date', type=str, help='title to create event')
+            parser.add_argument('time', type=str, help='title to create event')
+            parser.add_argument('email', type=str, help='title to create event')
+            parser.add_argument('sms', type=str, help='title to create event')
+            parser.add_argument('push', type=str, help='title to create event')
+            parser.add_argument('whatsapp', type=str, help='title to create event')
+
 
         except Exception as e:
             return {'error': str(e)}
