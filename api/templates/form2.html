@@ -7,28 +7,18 @@
 		<h1><a>Consulta de Agendamento de Envio de Comunicação</a></h1>
 		<form id="form_35301" method="get" action="http://localhost:8080/GetEvent">
 			<h2>Identificação</h2>
-			<p>Informe os dados de identificação para consulta</p>
+			<p>Informe o identificador ou o título para realizar uma consulta</p>
 
 			<p>
 				<label>Identificador: </label><br>
-				<input name="id" type="text" maxlength="255" value="" placeholder="Escreva seu identificador"/>
+				<input name="id" type="text" maxlength="120" value="" placeholder="Escreva seu identificador"/>
 			</p>
 
 			<p>
 				<label>Título/Assunto: </label><br>
-				<input name="title" type="text" maxlength="255" value="" placeholder="Escreva seu assunto"/>
+				<input name="title" type="text" maxlength="120" value="" placeholder="Escreva seu assunto"/>
 			</p>
-
-			<p>
-				<label>Data de Envio: </label> <br>
-				<input id="date" type="date">
-			</p>
-
-			<p>
-				<label>Hora de Envio: </label> <br>
-				<input type="time" id="time" name="time" value="13:00">
-			</p>
-				<input type="submit" name="submit" value="Submit" />
+				<input type="submit" name="submit" value="Buscar" />
 		</form>
 </body>
 </html>
