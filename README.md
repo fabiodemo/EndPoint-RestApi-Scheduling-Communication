@@ -10,7 +10,7 @@ CREATE TABLE `tblCommunication` (
 `Title` varchar(120) NOT NULL,
 `Date` date NOT NULL,
 `Time` time NOT NULL,
-`Description` TEXT,
+`Description` text,
 `Means` varchar(60),
 PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
