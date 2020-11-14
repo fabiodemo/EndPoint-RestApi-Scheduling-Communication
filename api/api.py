@@ -3,6 +3,14 @@ from flask_restful import Resource, Api, reqparse
 
 app = Flask(__name__)
 
+mysql = MySQL()
+
+#Configuração do banco de dados MySQL
+app.config['MYSQL_DATABASE_USER'] = 'fabio'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'fd'
+app.config['MYSQL_DATABASE_DB'] = 'Communication'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+
 class CreateEvent(Resource):
     def post(self):
         try:
