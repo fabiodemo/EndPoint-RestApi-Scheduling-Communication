@@ -25,6 +25,7 @@ class CreateEvent(Resource):
             #Acessa os identificadores da página html e adiciona uma a uma lista de argumentos
             parser = reqparse.RequestParser()
             parser.add_argument('title', type=str, help='title to create event')
+            parser.add_argument('recipient', type=str, help='description of the event')
             parser.add_argument('description', type=str, help='description of the event')
             parser.add_argument('date', type=str, help='date of the event')
             parser.add_argument('time', type=str, help='time of the event')
@@ -36,6 +37,7 @@ class CreateEvent(Resource):
 
             #Separa os argumentos em variáveis, para poder inserir no banco de dados
             _eventTitle = args['title']
+            _eventRec = args['recipient']
             _eventDesc = args['description']
             _eventDate = args['date']
             _eventTime = args['time']
@@ -50,7 +52,7 @@ class CreateEvent(Resource):
                 _eventMeans = _eventMeans + ", " + (args['whatsapp'])
 
             #Inserção dos dados no banco de dados
-            cursor.execute("insert into tblCommunication (Title, Description, Date, Time, Means) values ('"+_eventTitle+"','"+_eventDesc+"','"+_eventDate+"','"+_eventTime+"','"+_eventMeans+"')")
+            cursor.execute("insert into tblCommunication (Title, Recipient, Description, Date, Time, Means) values ('"+_eventTitle+"','"+_eventRec+"','"+_eventDesc+"','"+_eventDate+"','"+_eventTime+"','"+_eventMeans+"')")
             #Verificando se o cursos está em uma posição disponível do banco de dados
             data = cursor.fetchall()
             #Caso sim, faz o commit da inserção no banco de dados e retorna os argumentos em Json
