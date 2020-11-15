@@ -25,7 +25,7 @@ A API rodará em Python (versão 3.x), e como pré-requisitos para isso, será n
 $ pip3 install -r requirements.txt
 ```
 Deve-se a alterar também os campos de usuário e senha deste usuário, para acessar o banco de dados, que estão contidos no script "api.py"
-```
+```python
 app.config['MYSQL_DATABASE_USER'] = 'seuUsuario'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'suaSenha'
 ```
