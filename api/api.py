@@ -23,7 +23,7 @@ cursor = conn.cursor()
 class CreateEvent(Resource):
     def post(self):
         try:
-            #Acessa os identificadores da página html e adiciona uma a uma lista de argumentos
+            #Acessa os identificadores da página html e adiciona uma a uma lista de argumentos e separa os argumentos em variáveis, para poder inserir no banco de dados.
             parser = reqparse.RequestParser()
             parser.add_argument('title', type=str, help='title to create event')
             parser.add_argument('recipient', type=str, help='recipient of the event')
@@ -35,8 +35,6 @@ class CreateEvent(Resource):
             parser.add_argument('push', type=str, help='option of notification to the event')
             parser.add_argument('whatsapp', type=str, help='option of notification to the event')
             args = parser.parse_args()
-
-            #Separa os argumentos em variáveis, para poder inserir no banco de dados
             _eventTitle = args['title']
             _eventRec = args['recipient']
             _eventDesc = args['description']
@@ -51,6 +49,7 @@ class CreateEvent(Resource):
                 _eventMeans = _eventMeans + ", " + (args['push'])
             if(args['whatsapp']):
                 _eventMeans = _eventMeans + ", " + (args['whatsapp'])
+            print(_eventDate)
 
             #Inserção dos dados no banco de dados
             cursor.execute("insert into tblCommunication (Title, Recipient, Description, Date, Time, Means) values ('"+_eventTitle+"','"+_eventRec+"','"+_eventDesc+"','"+_eventDate+"','"+_eventTime+"','"+_eventMeans+"')")
@@ -77,7 +76,6 @@ class GetEvent(Resource):
             parser.add_argument('date', type=str, help='date of the event')
             parser.add_argument('time', type=str, help='time of the event')
             args = parser.parse_args()
-
             _eventId = args['id']
             _eventTitle = args['title']
             _eventRec = args['recipient']
@@ -100,7 +98,12 @@ class GetEvent(Resource):
 
             #Interpretação do botão para deletar determinado agendamento
             elif(request.form['submit'] == 'Deletar'):
-                return {'StatusCode':'200', 'Message': 'Deletar'}
+                cursor.execute("DELETE FROM tblCommunication WHERE Id = %s AND Recipient = %s AND Date = %s AND Time = %s", (_eventId, _eventRec, _eventDate, _eventTime,))
+                conn.commit()
+                return {'StatusCode':'200', 'Message': 'OK'}
+
+            else:
+                return {'StatusCode':'202', 'Message': 'The request has been accepted for processing, but the processing has not been completed.'}
 
         except Exception as e:
             return {'error': str(e)}
