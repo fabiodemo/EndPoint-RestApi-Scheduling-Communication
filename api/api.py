@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from flask_restful import Resource, Api, reqparse
 from flaskext.mysql import MySQL
+import datetime
 
 app = Flask(__name__)
 api = Api(app)
@@ -24,13 +25,13 @@ class CreateEvent(Resource):
             #Acessa os identificadores da página html e adiciona uma a uma lista de argumentos
             parser = reqparse.RequestParser()
             parser.add_argument('title', type=str, help='title to create event')
-            parser.add_argument('description', type=str, help='title to create event')
-            parser.add_argument('date', type=str, help='title to create event')
-            parser.add_argument('time', type=str, help='title to create event')
-            parser.add_argument('email', type=str, help='title to create event')
-            parser.add_argument('sms', type=str, help='title to create event')
-            parser.add_argument('push', type=str, help='title to create event')
-            parser.add_argument('whatsapp', type=str, help='title to create event')
+            parser.add_argument('description', type=str, help='description of the event')
+            parser.add_argument('date', type=str, help='date of the event')
+            parser.add_argument('time', type=str, help='time of the event')
+            parser.add_argument('email', type=str, help='option of notification to the event')
+            parser.add_argument('sms', type=str, help='option of notification to the event')
+            parser.add_argument('push', type=str, help='option of notification to the event')
+            parser.add_argument('whatsapp', type=str, help='option of notification to the event')
             args = parser.parse_args()
 
             #Separa os argumentos em variáveis, para poder inserir no banco de dados
@@ -66,9 +67,24 @@ class CreateEvent(Resource):
 class GetEvent(Resource):
     def post(self):
         try:
+            parser = reqparse.RequestParser()
+            parser.add_argument('id', type=str, help='id to search for the event')
+            parser.add_argument('title', type=str, help='title to search for the event')
+            parser.add_argument('date', type=str, help='date of the event')
+            parser.add_argument('time', type=str, help='time of the event')
+            args = parser.parse_args()
+
+            _eventId = args['id']
+            _eventTitle = args['title']
+            _eventDate = args['date']
+            _eventTime = args['time']
+
             #Interpretação do botão de busca um determinado agendamento
             if(request.form['submit'] == 'Buscar'):
-                return {'StatusCode':'200', 'Message': 'Buscar'}
+                cursor.execute("SELECT * FROM tblCommunication WHERE Id = %s", (_eventId,))
+                data = cursor.fetchall()
+                return jsonify(data)
+                #return {'StatusCode':'200', 'Message': 'Buscar'}
             #Interpretação do botão para deletar determinado agendamento
             elif(request.form['submit'] == 'Deletar'):
                 return {'StatusCode':'200', 'Message': 'Deletar'}
