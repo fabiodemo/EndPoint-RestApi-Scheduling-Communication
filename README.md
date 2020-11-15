@@ -52,4 +52,4 @@ $ python3 api.py
 
 ## Licença e Distribuição ##
 
-Veja o arquivo [LICENSE](API-Communicacation/LICENSE) para verificar os direitos de uso e distribuição desta API (GNU GPL v3).
+Veja o arquivo [LICENSE](LICENSE) para verificar os direitos de uso e distribuição desta API (GNU GPL v3).
