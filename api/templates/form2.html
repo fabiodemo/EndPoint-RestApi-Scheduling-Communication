@@ -5,7 +5,7 @@
 </head>
 <body >
 		<h1><a>Consulta de Agendamento de Envio de Comunicação</a></h1>
-		<form id="form_35301" method="get" action="http://localhost:8080/GetEvent">
+		<form id="form_35301" method="POST" action="http://localhost:8080/GetEvent">
 			<h2>Identificação</h2>
 			<p>Informe o identificador ou o título para realizar uma consulta</p>
 
@@ -19,6 +19,7 @@
 				<input name="title" type="text" maxlength="120" value="" placeholder="Escreva seu assunto"/>
 			</p>
 				<input type="submit" name="submit" value="Buscar" />
+				<input type="submit" name="submit" value="Deletar" />
 		</form>
 </body>
 </html>

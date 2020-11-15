@@ -50,7 +50,6 @@ class CreateEvent(Resource):
 
             #Inserção dos dados no banco de dados
             cursor.execute("insert into tblCommunication (Title, Description, Date, Time, Means) values ('"+_eventTitle+"','"+_eventDesc+"','"+_eventDate+"','"+_eventTime+"','"+_eventMeans+"')")
-
             #Verificando se o cursos está em uma posição disponível do banco de dados
             data = cursor.fetchall()
             #Caso sim, faz o commit da inserção no banco de dados e retorna os argumentos em Json
@@ -65,9 +64,14 @@ class CreateEvent(Resource):
             return {'error': str(e)}
 
 class GetEvent(Resource):
-    def get(self):
+    def post(self):
         try:
-            print("get")
+            #Interpretação do botão de busca um determinado agendamento
+            if(request.form['submit'] == 'Buscar'):
+                return {'StatusCode':'200', 'Message': 'Buscar'}
+            #Interpretação do botão para deletar determinado agendamento
+            elif(request.form['submit'] == 'Deletar'):
+                return {'StatusCode':'200', 'Message': 'Deletar'}
 
         except Exception as e:
             return {'error': str(e)}
@@ -75,17 +79,18 @@ class GetEvent(Resource):
 #Especificação dos endereços/rotas que serão acessados
 api.add_resource(CreateEvent, '/CreateEvent')
 api.add_resource(GetEvent, '/GetEvent')
-
+#Endereço para criação de um evento
 @app.route('/CreateEvent', methods=['GET', 'POST'])
 def CreateEvent(name=None):
     return render_template('form1.html', name=name)
-
-@app.route('/GetEvent')
+#Endereço para consulta de um evento
+@app.route('/GetEvent', methods=['GET', 'POST'])
 def GetEvent(name=None):
     return render_template('form2.html', name=name)
 
 if __name__ == '__main__':
-    #Biblioteca Waitress como alternativa ao server de desenvolvimento built-in do Flask
+    #Biblioteca Waitress, estabelece um servidor para fins de desenvolvimento
     from waitress import serve
     serve(app, host="127.0.0.1", port=8080)
+#    server de desenvolvimento built-in do Flask
 #    app.run(debug=True)
