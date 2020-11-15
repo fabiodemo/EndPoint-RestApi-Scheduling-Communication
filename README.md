@@ -20,6 +20,7 @@ USE Communication;
 CREATE TABLE `tblCommunication` (
 `Id` int NOT NULL AUTO_INCREMENT,
 `Title` varchar(120) NOT NULL,
+`Recipient` text,
 `Description` text,
 `Date` date NOT NULL,
 `Time` time NOT NULL,
