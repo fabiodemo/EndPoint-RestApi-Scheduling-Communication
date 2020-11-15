@@ -5,6 +5,12 @@
 </head>
 <body >
 		<h1><a>Consulta de Agendamento de Envio de Comunicação</a></h1>
+
+		<p>
+			Observações: para buscar determinado agendamento, deve ser preenchido: somente o identificador OU todos os dados.<br>
+			Para deletar determinado agendamento, todos os campos devem ser preenchidos corretamente para permitir que o agendamento seja deletado.
+		</p>
+
 		<form id="form_35301" method="POST" action="http://localhost:8080/GetEvent">
 			<h2>Identificação</h2>
 			<p>Informe o identificador ou o título para realizar uma consulta</p>
@@ -15,14 +21,9 @@
 			</p>
 
 			<p>
-				<label>Título/Assunto: </label><br>
-				<input name="title" type="text" maxlength="120" value="" placeholder="Escreva seu assunto"/>
-			</p>
-
-			<p>
 				<label>Destinatário: </label>
 				<br>
-				<input name="recipient" id="recipient" type="text" maxlength="120" value="" placeholder="Defina o destinatário" required="yes"/>
+				<input name="recipient" id="recipient" type="text" maxlength="120" value="" placeholder="Defina o destinatário"/>
 			</p>
 
 			<p>
