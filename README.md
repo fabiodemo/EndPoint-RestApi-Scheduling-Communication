@@ -54,11 +54,11 @@ Por fim, após ter seguido todos os passos acima, basta rodar o script "api.py" 
 $ python3 api.py
 ```
 ### Testes ###
-Para realizar testes, basta aceder aos endereços:
+Para realizar testes, uma das opções é aceder aos seguintes endereços:
 - http://127.0.0.1:8080/CreateEvent (para criar um agendamento de envio de comunicação);
 - http://127.0.0.1:8080/GetEvent (para realizar uma consulta de agendamento de envio de comunicação).
 
-Um outra alternativa para realizar os testes, pode ser através do Client URL (Curl). Para isso, basta acessar o arquivo Curl, o qual possui algumas requisições HTTP pré-preenchidas (três cada categoria: inserção, consulta e deletar), e para executá-las basta copiar (ou alterar) cada uma das requisições contidas no arquivo [Curl.txt](curl.txt).
+Uma outra alternativa para realizar os testes, pode ser através do Client URL (Curl). Para isso, basta acessar o arquivo Curl, o qual possui algumas requisições HTTP pré-preenchidas (três cada categoria: inserção, consulta e deletar), e para executá-las basta copiar (ou alterar) cada uma das requisições contidas no arquivo [Curl.txt](curl.txt).
 
 
 ## Licença e Distribuição ##
