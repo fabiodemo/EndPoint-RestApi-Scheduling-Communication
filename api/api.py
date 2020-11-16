@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify
 from flask_restful import Resource, Api, reqparse
 from flaskext.mysql import MySQL
 from datetime import datetime
-import json
 
 app = Flask(__name__)
 api = Api(app)
