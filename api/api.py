@@ -49,7 +49,6 @@ class CreateEvent(Resource):
                 _eventMeans = _eventMeans + ", " + (args['push'])
             if(args['whatsapp']):
                 _eventMeans = _eventMeans + ", " + (args['whatsapp'])
-            print(_eventDate)
 
             #Inserção dos dados no banco de dados
             cursor.execute("insert into tblCommunication (Title, Recipient, Description, Date, Time, Means) values ('"+_eventTitle+"','"+_eventRec+"','"+_eventDesc+"','"+_eventDate+"','"+_eventTime+"','"+_eventMeans+"')")

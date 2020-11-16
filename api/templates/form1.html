@@ -5,6 +5,11 @@
 </head>
 <body>
 		<h1><a>Agendamento de Envio de Comunicação</a></h1>
+
+		<p>
+			Para que seja registrado um evento, todos campos deverão ser preenchidos. Se pelo menos um meio de comunicação não for preenchido, o agendamento não será salvo no banco de dados.
+		</p>
+
 		<form id="form_35301" method="POST" action="http://localhost:8080/CreateEvent">
 
 			<p>Informe os Dados de Agendamento Abaixo</p>
@@ -15,13 +20,13 @@
 				<input name="title" id="title" type="text" maxlength="120" value="" placeholder="Escreva seu assunto" required="yes"/>
 			</p>
 
-			
+
 			<p>
 				<label>Destinatário: </label>
 				<br>
 				<input name="recipient" id="recipient" type="text" maxlength="120" value="" placeholder="Defina o destinatário" required="yes"/>
 			</p>
-			
+
 			<p>
 				<label>Descrição: </label>
 				<br>
