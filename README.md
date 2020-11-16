@@ -7,6 +7,8 @@ A plataforma deverá possuir:
 - Um endpoint que receba uma solicitação de agendamento de envio de comunicação.
 - Outro endpoint para realização de consulta do status do agendamento de envio de comunicação.
 - Deve haver também um endpoint para remoção de agendamento de envio de comunicação.
+
+
 Para facilitar o uso, na presente implementação as endpoints para consulta e deletar agendamentos foram unidas em um só, de forma que após realizar a busca o agendamento possa ser conferido, e caso não seja necessário ou esteja errado possa ser deletado.
 A API foi desenvolvida em Python (versão 3.8.5), devido ao maior conhecimento da linguagem e sua fácil aplicação do Flask-Restful. Além das diversas possibilidades que esta linguagem de alto nível oferece.
 
@@ -52,7 +54,7 @@ Para realizar testes, basta aceder aos endereços:
 - http://127.0.0.1:8080/CreateEvent (para criar um agendamento de envio de comunicação);
 - http://127.0.0.1:8080/GetEvent (para realizar uma consulta de agendamento de envio de comunicação).
 
-Um outra alternativa para realizar os testes, pode ser através do Client URL (Curl). Para isso, basta acessar o arquivo Curl, o qual possui algumas requisições HTTP pré-preenchidas, e para executá-las basta copiar cada parágrafo contido no arquivo [Curl.txt](curl.txt).
+Um outra alternativa para realizar os testes, pode ser através do Client URL (Curl). Para isso, basta acessar o arquivo Curl, o qual possui algumas requisições HTTP pré-preenchidas (três cada categoria: inserção, consulta e deletar), e para executá-las basta copiar (ou alterar) cada uma das requisições contidas no arquivo [Curl.txt](curl.txt).
 
 
 ## Licença e Distribuição ##
