@@ -52,7 +52,7 @@ Para realizar testes, basta aceder aos endereços:
 - http://127.0.0.1:8080/CreateEvent (para criar um agendamento de envio de comunicação);
 - http://127.0.0.1:8080/GetEvent (para realizar uma consulta de agendamento de envio de comunicação).
 
-Um outra alternativa para realizar os testes, pode ser através do Client URL (Curl). Para isso, basta acessar o arquivo Curl, o qual possui algumas requisições HTTP pré-preenchidas, e para executá-las basta copiar cada parágrafo contido no arquivo [Curl.txt](Curl.txt)
+Um outra alternativa para realizar os testes, pode ser através do Client URL (Curl). Para isso, basta acessar o arquivo Curl, o qual possui algumas requisições HTTP pré-preenchidas, e para executá-las basta copiar cada parágrafo contido no arquivo [Curl.txt](/blob/main/curl.txt).
 
 
 ## Licença e Distribuição ##
