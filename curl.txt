@@ -1,5 +1,6 @@
+#########################################################
 ##Para utilizar, copie cada um dos comandos curl abaixo##
-
+#########################################################
 
 #################INSERÇÃO#################
 curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --referer 'http://127.0.0.1:8080/CreateEvent' --header 'Upgrade-Insecure-Requests: 1' --request POST --data-urlencode 'title=Assunto importante para o teste' --data-urlencode 'recipient=teste123@gmail.com' --data-urlencode 'description=Descrição detalhadat' --data-urlencode 'date=2020-11-19' --data-urlencode 'time=17:00' --data-urlencode 'email=email' --data-urlencode 'sms=sms' --data-urlencode 'push=push' --data-urlencode 'whatsapp=whatsapp' --data-urlencode 'submit=Concluir' 'http://localhost:8080/CreateEvent' --output 'CreateEvent'
@@ -7,6 +8,7 @@ curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --
 curl --header 'Host: localhost:8080' --header 'Origin: http://localhost:8080' --referer 'http://localhost:8080/CreateEvent' --header 'Upgrade-Insecure-Requests: 1' --request POST --data-urlencode 'title=Teste importante' --data-urlencode 'recipient=dest@hotmail.com' --data-urlencode 'description=Esta é uma descrição sobre a tarefa' --data-urlencode 'date=2020-11-27' --data-urlencode 'time=21:00' --data-urlencode 'sms=sms' --data-urlencode 'whatsapp=whatsapp' --data-urlencode 'submit=Concluir' 'http://localhost:8080/CreateEvent' --output 'CreateEvent'
 
 curl --header 'Host: localhost:8080' --header 'Origin: http://localhost:8080' --referer 'http://localhost:8080/CreateEvent' --header 'Upgrade-Insecure-Requests: 1' --request POST --data-urlencode 'title=Terceiro Teste' --data-urlencode 'recipient=testthird@yahoo.com.br' --data-urlencode 'description=Testando...' --data-urlencode 'date=2020-11-20' --data-urlencode 'time=09:30' --data-urlencode 'sms=sms' --data-urlencode 'push=push' --data-urlencode 'submit=Concluir' 'http://localhost:8080/CreateEvent' --output 'CreateEvent'
+###########################################
 
 #################Busca#################
 curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --referer 'http://127.0.0.1:8080/GetEvent' --header 'Upgrade-Insecure-Requests: 1' --request POST --data-urlencode 'id=1' --data-urlencode 'recipient=' --data-urlencode 'date=' --data-urlencode 'time=13:00' --data-urlencode 'submit=Buscar' 'http://localhost:8080/GetEvent' --output 'GetEvent'
@@ -14,6 +16,7 @@ curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --
 curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --referer 'http://127.0.0.1:8080/GetEvent' --header 'Upgrade-Insecure-Requests: 1' --request POST --data-urlencode 'id=3' --data-urlencode 'recipient=' --data-urlencode 'date=' --data-urlencode 'time=' --data-urlencode 'submit=Buscar' 'http://localhost:8080/GetEvent' --output 'GetEvent'
 
 curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --referer 'http://127.0.0.1:8080/GetEvent' --header 'Upgrade-Insecure-Requests: 1' --request POST --data-urlencode 'id=1' --data-urlencode 'recipient=' --data-urlencode 'date=' --data-urlencode 'time=' --data-urlencode 'submit=Buscar' 'http://localhost:8080/GetEvent' --output 'GetEvent'
+###########################################
 
 #################Deletar#################
 curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --referer 'http://127.0.0.1:8080/GetEvent' --header 'Upgrade-Insecure-Requests: 1' --request POST --data-urlencode 'id=1' --data-urlencode 'recipient=teste123@gmail.com' --data-urlencode 'date=2020-11-19' --data-urlencode 'time=17:00' --data-urlencode 'submit=Deletar' 'http://localhost:8080/GetEvent' --output 'GetEvent'
@@ -21,3 +24,4 @@ curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --
 curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --referer 'http://127.0.0.1:8080/GetEvent' --header 'Upgrade-Insecure-Requests: 1' --request POST --data-urlencode 'id=2' --data-urlencode 'recipient=dest@hotmail.com  ' --data-urlencode 'date=2020-11-27' --data-urlencode 'time=21:00' --data-urlencode 'submit=Deletar' 'http://localhost:8080/GetEvent' --output 'GetEvent'
 
 curl --header 'Host: localhost:8080' --header 'Origin: http://127.0.0.1:8080' --referer 'http://127.0.0.1:8080/GetEvent' --header 'Upgrade-Insecure-Requests: 1' --request POST --data-urlencode 'id=3' --data-urlencode 'recipient=testthird@yahoo.com.br' --data-urlencode 'date=2020-11-20' --data-urlencode 'time=09:03' --data-urlencode 'submit=Deletar' 'http://localhost:8080/GetEvent' --output 'GetEvent'
+###########################################
