@@ -10,6 +10,8 @@ A plataforma deverá possuir:
 
 
 Para facilitar o uso, na presente implementação as endpoints para consulta e deletar agendamentos foram unidas em um só, de forma que após realizar a busca o agendamento possa ser conferido, e caso não seja necessário ou esteja errado possa ser deletado.
+
+
 A API foi desenvolvida em Python (versão 3.8.5), devido ao maior conhecimento da linguagem e sua fácil aplicação do Flask-Restful. Além das diversas possibilidades que esta linguagem de alto nível oferece.
 
 ## Requisitos ##
