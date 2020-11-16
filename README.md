@@ -4,8 +4,8 @@
 ## Descrição ##
 O presente projeto visa atender aos requisitos do desafio Tech proposto pelo programa de Trainee Biopark.
 A plataforma deverá possuir:
-- Um endpoint que receba uma solicitação de agendamento de envio de comunicação.
-- Outro endpoint para realização de consulta do status do agendamento de envio de comunicação.
+- Um endpoint que receba uma solicitação de agendamento de envio de comunicação;
+- Outro endpoint para realização de consulta do status do agendamento de envio de comunicação;
 - Deve haver também um endpoint para remoção de agendamento de envio de comunicação.
 
 
