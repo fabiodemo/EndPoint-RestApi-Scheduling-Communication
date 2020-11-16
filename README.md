@@ -1,4 +1,4 @@
-# API Communication - Desafio Tech #
+# API Scheduling Communication - Desafio Tech #
 ### Autor: Fábio Demo da Rosa ###
 
 ## Descrição ##
