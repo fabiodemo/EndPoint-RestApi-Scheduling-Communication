@@ -82,6 +82,7 @@ class GetEvent(Resource):
 
             #Interpretação do botão de busca um determinado agendamento
             if(request.form['submit'] == 'Buscar'):
+                #Seleciona os dados do agendamento pelo identificador pré-estabelecido.
                 cursor.execute("SELECT * FROM tblCommunication WHERE Id = %s", (_eventId,))
                 data = cursor.fetchall()
                 #Tratamento dos resultados da busca, para retornar os dados da forma mais clara possível no json
@@ -96,6 +97,7 @@ class GetEvent(Resource):
 
             #Interpretação do botão para deletar determinado agendamento
             elif(request.form['submit'] == 'Deletar'):
+                #Os dados serão deletados somente se forem iguais aos atributos: Id, Destinatário, Data do Agendamento e Horário do Agendamento.
                 cursor.execute("DELETE FROM tblCommunication WHERE Id = %s AND Recipient = %s AND Date = %s AND Time = %s", (_eventId, _eventRec, _eventDate, _eventTime,))
                 conn.commit()
                 return {'StatusCode':'200', 'Message': 'OK'}
