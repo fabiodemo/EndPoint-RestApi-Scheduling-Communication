@@ -16,9 +16,11 @@ A API foi desenvolvida em Python (versão 3.8.5), devido ao maior conhecimento d
 
 ## Requisitos ##
 
-Como pré-requisitos para rodar, será necessário instalar o arquivo "requirements.txt" através do pip3, usando o seguinte comando:
+Como pré-requisitos para rodar, será necessário instalar o flask, flask_restful e o flask-mysql através do pip3, usando o seguinte comando:
 ```
-$ pip3 install -r requirements.txt
+$ pip3 install flask
+$ pip3 flask_restful
+$ pip3 flask-mysql
 ```
 Deve-se a alterar também os campos de usuário e senha de acesso ao banco de dados, que estão contidos no script "api.py", para que o script tenha acesso ao banco de dados e salve as alterações feitas na endpoint.
 ```python
