@@ -10,8 +10,8 @@ api = Api(app)
 mysql = MySQL()
 
 #Configuração do banco de dados MySQL
-app.config['MYSQL_DATABASE_USER'] = 'fabio'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'fd'
+app.config['MYSQL_DATABASE_USER'] = 'seuUsuario'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'suaSenha'
 app.config['MYSQL_DATABASE_DB'] = 'Communication'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
