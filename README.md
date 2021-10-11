@@ -63,4 +63,4 @@ Uma outra alternativa para realizar os testes, pode ser através do Client URL (
 
 ## Licença e Distribuição ##
 
-Veja o arquivo [LICENSE](LICENSE) para verificar os direitos de uso e distribuição desta API (GNU GPL v3).
+Veja o arquivo [LICENSE](LICENSE) para verificar os direitos de uso e distribuição deste Endpoint/API (GNU GPL v3).
