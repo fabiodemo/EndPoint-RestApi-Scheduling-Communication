@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_restful import Resource, Api, reqparse
 from flaskext.mysql import MySQL
 from datetime import datetime
+from waitress import serve # Para criar um server voltado para desenvolvimento
 
 app = Flask(__name__)
 api = Api(app)
@@ -121,8 +122,6 @@ def GetEvent(name=None):
     return render_template('form2.html', name=name)
 
 if __name__ == '__main__':
-    #Biblioteca Waitress, estabelece um servidor para fins de desenvolvimento
-    from waitress import serve
     serve(app, host="127.0.0.1", port=8080)
 #    server de desenvolvimento built-in do Flask
 #    app.run(debug=True)
